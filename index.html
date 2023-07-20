@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MOKEPON ! 🔮</title>
+    <script src="/js/mokepon.js"></script>
 </head>
 
 <body>
@@ -23,6 +24,7 @@
         <input type="radio" name="pet" id="tucapalma">
         <label for="pydos">Pydos</label>
         <input type="radio" name="pet" id="pydos">
+        <button id="button_pet">Select</button>
         <!-- PETS
         Hipodoge -> Agua
         Capipepo -> Tierra
@@ -30,7 +32,7 @@
         Langostelvis -> Agua, Fuego
         Tucapalma -> Agua y Tierra
         Pydos -> Tierra y Fuego -->
-        <button>Select</button>
+        
     </section>
 
     <section id="select_attack">
@@ -38,18 +40,18 @@
         <p>Your pet have <span>3</span> lives 💓</p> <!--Etiqueta Span Te sirve para que sea interactiva esa seccion-->
         <p>Enemy's pet has <span>3</span> lives 💓</p>
         <p>
-            <button>Fire 🔥</button>
-            <button>Water 💧</button>
-            <button>Earth 🌱</button>
+            <button id="button_fire">Fire 🔥</button>
+            <button id="button_water">Water 💧</button>
+            <button id="button_earth">Earth 🌱</button>
         </p>
     </section>
     <section id="messages">
         <p>Your Pet attacked with fire and Enemy's pet attacked with earth -- YOU WIN 🎇🎇-- </p>
     </section>
     <section id="restart">
-        <button>RESTART</button>
+        <button id="button_reset">RESTART</button>
     </section>
-
+    
 </body>
 
 </html>

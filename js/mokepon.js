@@ -10,19 +10,19 @@ function selectPetPlayer() {
     let radioLangostelvis = document.getElementById('langostelvis')
     let radioTucapalma = document.getElementById('tucapalma')
     let radioPydos = document.getElementById('pydos')
-
+    let spanPetPlayer=document.getElementById('pet_Player')
     if (radioHipodoge.checked) {
-        alert("Seleccionaste a Hipodoge")
+        spanPetPlayer.innerHTML=' Hipodoge '
     } else if (radioCapipepo.checked) {
-        alert("Seleccionaste a Capipepo")
+        spanPetPlayer.innerHTML=' Capipepo '
     } else if (radioRatigueya.checked) {
-        alert("Seleccionaste a Ratigueya")
+        spanPetPlayer.innerHTML=' Ratigueya '
     } else if (radioLangostelvis.checked) {
-        alert("Seleccionaste a Langostelvis")
+        spanPetPlayer.innerHTML=' Langostelvis '
     } else if (radioTucapalma.checked) {
-        alert("Seleccionaste a Tucapalma")
+        spanPetPlayer.innerHTML=' Tucapalma '
     } else if (radioPydos.checked) {
-        alert("Seleccionaste a Pydos")
+        spanPetPlayer.innerHTML=' Pydos '
     }else {
         alert("Selecciona primero una Pet")
     }

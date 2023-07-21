@@ -1,5 +1,7 @@
 let attackPlayer = ''
 let attackEnemy = ''
+let playerLives = 3
+let enemyLives = 3
 function startGame() {
     let buttonPet = document.getElementById('button_pet')
     buttonPet.addEventListener('click', selectPetPlayer)
@@ -75,15 +77,47 @@ function attackEnemyRandom() {
         case 3:
             attackEnemy = 'Earth'
             break;
-    }
-    createMessage()
+    } 
+    combat() 
 }
-function createMessage() {
-    let sectionMessages=document.getElementById('messages')
+
+function reviewLives(){
+    if (enemyLives==0){
+        createFinalMessage('CONGRATS YOU WON MOKEPON GAME 🔮🎇')
+    }else if(playerLives==0){
+        createFinalMessage('GAME OVER ❌ YOU LOST MOKEPON GAME')
+    }
+}
+function createFinalMessage(finalResult) {
+    let sectionMessages = document.getElementById('messages')
     let pharagraph = document.createElement('p')
-    pharagraph.innerHTML = "Your Pet attacked with " + attackPlayer + " and Enemy's pet attacked with " + attackEnemy + " -- WAITING-- "
+    pharagraph.innerHTML = finalResult
     sectionMessages.appendChild(pharagraph);
 }
+function createMessage(result) {
+    let sectionMessages = document.getElementById('messages')
+    let pharagraph = document.createElement('p')
+    pharagraph.innerHTML = "Your Pet attacked with " + attackPlayer + " and Enemy's pet attacked with " + attackEnemy + " -- " + result + "-- "
+    sectionMessages.appendChild(pharagraph);
+}
+function combat() {
+    let spanplayerLives = document.getElementById('player_Lives')
+    let spanenemyLives = document.getElementById('enemy_Lives')
+        if (attackPlayer == attackEnemy) {
+            createMessage( '😐 YOU DRAW 😐')
+        } else if ((attackPlayer == 'Fire' && attackEnemy == 'Earth') || (attackPlayer == 'Water' && attackEnemy == 'Fire') || (attackPlayer == 'Earth' && attackEnemy == 'Water')) {
+            createMessage('🎇 YOU WIN 🎇')
+            enemyLives--
+            spanenemyLives.innerHTML = enemyLives
+        } else {
+            createMessage( '😪 YOU LOSE 😪')
+            playerLives--
+            spanplayerLives.innerHTML = playerLives
+        }
+        //Revisar Vidas
+        reviewLives()
+}
+
 function attackFire() {
     attackPlayer = 'Fire'
     attackEnemyRandom()

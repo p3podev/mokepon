@@ -1,6 +1,14 @@
+let attackPlayer = ''
+let attackEnemy = ''
 function startGame() {
     let buttonPet = document.getElementById('button_pet')
     buttonPet.addEventListener('click', selectPetPlayer)
+    let buttonFire = document.getElementById('button_fire')
+    buttonFire.addEventListener('click', attackFire)
+    let buttonWater = document.getElementById('button_water')
+    buttonWater.addEventListener('click', attackWater)
+    let buttonEarth = document.getElementById('button_earth')
+    buttonEarth.addEventListener('click', attackEarth)
 }
 function aleatorio(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
@@ -55,4 +63,38 @@ function selectPetEnemy() {
             break;
     }
 }
+function attackEnemyRandom() {
+    let attackRandom = aleatorio(1, 3)
+    switch (attackRandom) {
+        case 1:
+            attackEnemy = 'Fire'
+            break;
+        case 2:
+            attackEnemy = 'Water'
+            break;
+        case 3:
+            attackEnemy = 'Earth'
+            break;
+    }
+    createMessage()
+}
+function createMessage() {
+    let sectionMessages=document.getElementById('messages')
+    let pharagraph = document.createElement('p')
+    pharagraph.innerHTML = "Your Pet attacked with " + attackPlayer + " and Enemy's pet attacked with " + attackEnemy + " -- WAITING-- "
+    sectionMessages.appendChild(pharagraph);
+}
+function attackFire() {
+    attackPlayer = 'Fire'
+    attackEnemyRandom()
+}
+function attackWater() {
+    attackPlayer = 'Water'
+    attackEnemyRandom()
+}
+function attackEarth() {
+    attackPlayer = 'Earth'
+    attackEnemyRandom()
+}
+
 window.addEventListener('load', startGame)

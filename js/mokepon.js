@@ -3,6 +3,10 @@ let attackEnemy = ''
 let playerLives = 3
 let enemyLives = 3
 function startGame() {
+    let selectAttackSection=document.getElementById('select_attack')
+    selectAttackSection.style.display='none'
+    let restartSection=document.getElementById('restart')
+    restartSection.style.display='none'
     let buttonPet = document.getElementById('button_pet')
     buttonPet.addEventListener('click', selectPetPlayer)
     let buttonFire = document.getElementById('button_fire')
@@ -11,11 +15,20 @@ function startGame() {
     buttonWater.addEventListener('click', attackWater)
     let buttonEarth = document.getElementById('button_earth')
     buttonEarth.addEventListener('click', attackEarth)
+    let buttonRestart = document.getElementById('button_reset')
+    buttonRestart.addEventListener('click', resetGame)
+}
+function resetGame(){
+    window.location.reload()
 }
 function aleatorio(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
 function selectPetPlayer() {
+    let selectAttackSection=document.getElementById('select_attack')
+    selectAttackSection.style.display='block'
+    let selectPetSection=document.getElementById('select_pet')
+    selectPetSection.style.display='none'
     let radioHipodoge = document.getElementById('hipodoge')
     let radioCapipepo = document.getElementById('capipepo')
     let radioRatigueya = document.getElementById('ratigueya')
@@ -39,7 +52,14 @@ function selectPetPlayer() {
         alert("Selecciona primero una Pet")
     }
     selectPetEnemy()
-
+    let buttonPet = document.getElementById('button_pet')
+    buttonPet.disabled=true
+    radioHipodoge.disabled=true
+    radioCapipepo.disabled=true
+    radioRatigueya.disabled=true
+    radioLangostelvis.disabled=true
+    radioTucapalma.disabled=true
+    radioPydos.disabled=true
 }
 function selectPetEnemy() {
     let petRandom = aleatorio(1, 6)
@@ -80,10 +100,9 @@ function attackEnemyRandom() {
     } 
     combat() 
 }
-
 function reviewLives(){
     if (enemyLives==0){
-        createFinalMessage('CONGRATS YOU WON MOKEPON GAME 🔮🎇')
+        createFinalMessage('CONGRATS YOU WON MOKEPON GAME 🔮🎇')     
     }else if(playerLives==0){
         createFinalMessage('GAME OVER ❌ YOU LOST MOKEPON GAME')
     }
@@ -93,6 +112,15 @@ function createFinalMessage(finalResult) {
     let pharagraph = document.createElement('p')
     pharagraph.innerHTML = finalResult
     sectionMessages.appendChild(pharagraph);
+    
+    let buttonFire = document.getElementById('button_fire')
+    buttonFire.disabled=true
+    let buttonWater = document.getElementById('button_water')
+    buttonWater.disabled=true
+    let buttonEarth = document.getElementById('button_earth')
+    buttonEarth.disabled=true
+    let restartSection=document.getElementById('restart')
+    restartSection.style.display='block'
 }
 function createMessage(result) {
     let sectionMessages = document.getElementById('messages')
@@ -117,7 +145,6 @@ function combat() {
         //Revisar Vidas
         reviewLives()
 }
-
 function attackFire() {
     attackPlayer = 'Fire'
     attackEnemyRandom()
@@ -130,5 +157,4 @@ function attackEarth() {
     attackPlayer = 'Earth'
     attackEnemyRandom()
 }
-
 window.addEventListener('load', startGame)

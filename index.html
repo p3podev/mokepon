@@ -6,24 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MOKEPON ! 🔮</title>
     <script src="./js/mokepon.js"></script>
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body>
-    <h1>MOKEPON 🔥💧🌱</h1>
+    <section id="tittle_section">
+        <h1 class="title">🌱💧🔥 MOKEPON 🔥💧🌱</h1>
+    </section>
     <section id="select_pet">
         <h2>Choose your pet:</h2>
-        <label for="hipodoge">Hipodoge</label>
-        <input type="radio" name="pet" id="hipodoge">
-        <label for="capipepo">Capipepo</label>
-        <input type="radio" name="pet" id="capipepo">
-        <label for="ratigueya">Ratigueya</label>
-        <input type="radio" name="pet" id="ratigueya">
-        <label for="langostelvis">Langostelvis</label>
-        <input type="radio" name="pet" id="langostelvis">
-        <label for="tucapalma">Tucapalma</label>
-        <input type="radio" name="pet" id="tucapalma">
-        <label for="pydos">Pydos</label>
-        <input type="radio" name="pet" id="pydos">
+        <section id="pet_section">
+            <div class="one_card_pet">
+                <label class="mokepon_card" for="hipodoge">
+                    <p>Hipodoge</p>
+                    <img src="https://media.discordapp.net/attachments/1052032664024137803/1136839963376365628/5c9a0195b7e3470363aa7b45.png?width=522&height=468" alt="Hipodoge">
+                </label>
+                <input type="radio" name="pet" id="hipodoge">
+                <label class="mokepon_card" for="capipepo">
+                    <p>Capipepo</p>
+                    <img src="https://media.discordapp.net/attachments/1052032664024137803/1136831710609281144/capipepo.png?width=421&height=468" alt="Capipepo">
+                </label>
+                <input type="radio" name="pet" id="capipepo">
+                <label class="mokepon_card" for="ratigueya">
+                    <p>Ratigueya</p>
+                    <img src="https://media.discordapp.net/attachments/1052032664024137803/1136831711607521391/ratigueya.png?width=566&height=468" alt="Ratigueya">
+                </label>
+                <input type="radio" name="pet" id="ratigueya">
+            </div>
+            <div class="two_card_pet">
+                <label class="mokepon_card" for="langostelvis">
+                    <p>Gargolin</p>
+                    <img src="https://media.discordapp.net/attachments/1052032664024137803/1136831711108415598/langostelvis.png?width=471&height=468" alt="Langostelvis">
+                </label>
+                <input type="radio" name="pet" id="langostelvis">
+                <label class="mokepon_card" for="tucapalma">
+                    <p>Tucapalma</p>
+                    <img src="https://media.discordapp.net/attachments/1052032664024137803/1136831711842418738/tucapalma.png?width=444&height=468" alt="Tucapalma">
+                </label>
+                <input type="radio" name="pet" id="tucapalma">
+                <label class="mokepon_card" for="pydos">
+                    <p>Pydos</p>
+                    <img src="https://media.discordapp.net/attachments/1052032664024137803/1136831711355867228/pydos.png" alt="Pydos">
+                </label>
+                <input type="radio" name="pet" id="pydos">
+            </div>
+        </section>
+        <br>
+        <br>
         <button id="button_pet">Select</button>
         <!-- PETS
         Hipodoge -> Agua
@@ -32,12 +61,13 @@
         Langostelvis -> Agua, Fuego
         Tucapalma -> Agua y Tierra
         Pydos -> Tierra y Fuego -->
-        
+
     </section>
 
     <section id="select_attack">
         <h2>Choose your attack:</h2>
-        <p>Your pet <span id="pet_Player"></span> have <span id="player_Lives">3</span> lives 💓</p> <!--Etiqueta Span Te sirve para que sea interactiva esa seccion-->
+        <p>Your pet <span id="pet_Player"></span> have <span id="player_Lives">3</span> lives 💓</p>
+        <!--Etiqueta Span Te sirve para que sea interactiva esa seccion-->
         <p>Enemy's pet <span id="pet_Enemy"></span> has <span id="enemy_Lives">3</span> lives 💓</p>
         <p>
             <button id="button_fire">Fire 🔥</button>
@@ -46,12 +76,12 @@
         </p>
     </section>
     <section id="messages">
-        
+
     </section>
     <section id="restart">
         <button id="button_reset">RESTART</button>
     </section>
-    
+
 </body>
 
 </html>

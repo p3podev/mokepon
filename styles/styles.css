@@ -1,0 +1,83 @@
+/*Selector de tipo ocupa el mismo nombre de la etiqueta de HTML h1 div p*/
+/*Selector de clase ocupa el atributo class de HTML y para llamarlo se pone .NombreDelClass*/
+/*Selector de ID ocupa el atributo class de HTML y para llamarlo se pone #NombreDelClass*/
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+body {
+    background-color: #222831;
+    color: #DDDDDD;
+    font-family: 'Press Start 2P', cursive;
+}
+#button_pet {
+    width: 175px;
+    height: 50px;
+    color: #DDDDDD;
+    background-color: #F05454;
+    font-size: larger;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 10px;
+    border: 3px double #DDDDDD;
+    border-top-width: 3px;
+    font-family: 'Press Start 2P', cursive;
+    
+}
+.title {
+    width: 650px;
+    height: 50px;
+    text-align: center;
+    -webkit-text-stroke: 1.2px #F05454;
+    color: transparent; 
+    font-size:2.5em;
+}
+#tittle_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+#select_pet {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#pet_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 8.8px;
+    gap: 50px
+    
+}
+.one_card_pet {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; 
+    gap: 10px
+}
+.two_card_pet {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px
+}
+.mokepon_card {
+    width: 100px;
+    height: 100px;
+    background: #30475E;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px;
+    border: 1px solid #DDDDDD;
+    border-radius: 20px
+}
+.mokepon_card img{
+    width: 90px;
+}
+input {
+    display: none;
+}

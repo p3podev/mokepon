@@ -43,7 +43,7 @@ function selectPetPlayer() {
     } else if (radioRatigueya.checked) {
         spanPetPlayer.innerHTML = ' Ratigueya '
     } else if (radioLangostelvis.checked) {
-        spanPetPlayer.innerHTML = ' Langostelvis '
+        spanPetPlayer.innerHTML = ' Gargolin '
     } else if (radioTucapalma.checked) {
         spanPetPlayer.innerHTML = ' Tucapalma '
     } else if (radioPydos.checked) {
@@ -75,7 +75,7 @@ function selectPetEnemy() {
             spanPetEnemy.innerHTML = ' Ratigueya '
             break;
         case 4:
-            spanPetEnemy.innerHTML = ' Langostelvis '
+            spanPetEnemy.innerHTML = ' Gargolin '
             break;
         case 5:
             spanPetEnemy.innerHTML = ' Tucapalma '

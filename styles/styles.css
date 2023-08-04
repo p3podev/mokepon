@@ -14,11 +14,11 @@ body {
     background-color: #F05454;
     font-size: larger;
     box-sizing: border-box;
-    padding: 10px;
-    margin: 10px;
+    margin-top: 30px;
     border: 3px double #DDDDDD;
     border-top-width: 3px;
     font-family: 'Press Start 2P', cursive;
+    border-radius: 20px;
     
 }
 .title {
@@ -66,14 +66,18 @@ body {
     gap: 10px
 }
 .mokepon_card {
-    width: 100px;
+    width: 180px;
     height: 100px;
     background: #30475E;
     padding: 10px;
     box-sizing: border-box;
     margin: 10px;
     border: 1px solid #DDDDDD;
-    border-radius: 20px
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
 }
 .mokepon_card img{
     width: 90px;

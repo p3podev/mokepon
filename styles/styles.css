@@ -2,11 +2,13 @@
 /*Selector de clase ocupa el atributo class de HTML y para llamarlo se pone .NombreDelClass*/
 /*Selector de ID ocupa el atributo class de HTML y para llamarlo se pone #NombreDelClass*/
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 body {
     background-color: #222831;
     color: #DDDDDD;
     font-family: 'Press Start 2P', cursive;
 }
+
 #button_pet {
     width: 175px;
     height: 50px;
@@ -19,16 +21,20 @@ body {
     border-top-width: 3px;
     font-family: 'Press Start 2P', cursive;
     border-radius: 20px;
-    
+}
+#button_pet:hover {
+    color: #30475E;
+    cursor: pointer;
 }
 .title {
     width: 650px;
     height: 50px;
     text-align: center;
     -webkit-text-stroke: 1.2px #F05454;
-    color: transparent; 
-    font-size:2.5em;
+    color: transparent;
+    font-size: 2.5em;
 }
+
 #tittle_section {
     display: flex;
     flex-direction: column;
@@ -36,12 +42,14 @@ body {
     align-items: center;
 
 }
+
 #select_pet {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
 #pet_section {
     display: flex;
     flex-direction: column;
@@ -49,15 +57,16 @@ body {
     align-items: center;
     font-size: 8.8px;
     gap: 50px
-    
 }
+
 .one_card_pet {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     gap: 10px
 }
+
 .two_card_pet {
     display: flex;
     flex-direction: row;
@@ -65,6 +74,7 @@ body {
     align-items: center;
     gap: 10px
 }
+
 .mokepon_card {
     width: 180px;
     height: 100px;
@@ -78,33 +88,63 @@ body {
     justify-content: center;
     align-items: center;
     gap: 5px;
+
 }
-.mokepon_card img{
+.mokepon_card:hover{
+    color: #F05454;
+    cursor: pointer;
+}
+#hipodoge:checked + .mokepon_card{
+    color: #F05454;
+}
+#capipepo:checked + .mokepon_card{
+    color: #F05454;
+}
+#ratigueya:checked + .mokepon_card{
+    color: #F05454;
+}
+#langostelvis:checked + .mokepon_card{
+    color: #F05454;
+}
+#tucapalma:checked + .mokepon_card{
+    color: #F05454;
+}
+#pydos:checked + .mokepon_card{
+    color: #F05454;
+}
+.mokepon_card img {
     width: 90px;
 }
-#select_attack{
+
+#select_attack {
     flex-direction: column;
     align-items: center;
 }
 
-#button_attack{
+#button_attack {
     display: flex;
     flex-direction: row;
     gap: 25px;
     margin-bottom: 25px;
 }
-#button_attack button{
-background-color: #222831;
-display: flex;
-align-items: center;
-flex-direction: column;
-padding: 0;
-border: none;
-gap: 5px;
-color: #DDDDDD;
-font-family: 'Press Start 2P', cursive;
+
+#button_attack button {
+    background-color: #222831;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+    border: none;
+    gap: 5px;
+    color: #DDDDDD;
+    font-family: 'Press Start 2P', cursive;
 }
-#button_attack img{
+#button_attack button:hover{
+    color: #F05454;
+    cursor: pointer;
+}
+
+#button_attack img {
     height: 80px;
     background-color: #222831;
 }

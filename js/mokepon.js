@@ -26,7 +26,7 @@ function aleatorio(min, max) {
 }
 function selectPetPlayer() {
     let selectAttackSection=document.getElementById('select_attack')
-    selectAttackSection.style.display='block'
+    selectAttackSection.style.display='flex'
     let selectPetSection=document.getElementById('select_pet')
     selectPetSection.style.display='none'
     let radioHipodoge = document.getElementById('hipodoge')

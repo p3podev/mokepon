@@ -82,6 +82,34 @@ body {
 .mokepon_card img{
     width: 90px;
 }
+#select_attack{
+    flex-direction: column;
+    align-items: center;
+}
+
+#button_attack{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    margin-bottom: 25px;
+}
+#button_attack button{
+background-color: #222831;
+display: flex;
+align-items: center;
+flex-direction: column;
+padding: 0;
+border: none;
+gap: 5px;
+color: #DDDDDD;
+font-family: 'Press Start 2P', cursive;
+}
+#button_attack img{
+    height: 80px;
+    background-color: #222831;
+}
+
 input {
     display: none;
+
 }

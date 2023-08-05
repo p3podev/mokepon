@@ -89,13 +89,22 @@
             <button id="button_reset">RESTART</button>
         </div>
 
-        <div>
-            <div id="players_attack"></div>
-            <div id="enemys_attack"></div>
-            <p>Your pet <span id="pet_Player"></span> have <span id="player_Lives">3</span> lives 💓</p>
-            <!--Etiqueta Span Te sirve para que sea interactiva esa seccion-->
-            <p>Enemy's pet <span id="pet_Enemy"></span> has <span id="enemy_Lives">3</span> lives 💓</p>
+        <div class="attacks">
+            <div class="attacks_player">
+                <p id="pet_Player"></p>
+                <p><span id="player_Lives">3</span> ❤</p>
+                <div id="players_attack"></div>
+            </div>
+            <div class="versus">
+                <p>VS</p>
+            </div>
+            <div class="attacks_enemy">
+                <p id="pet_Enemy"></p>
+                <p><span id="enemy_Lives">3</span> ❤</p>
+                <div id="enemys_attack"></div>
+            </div>
         </div>
+        <!--Etiqueta Span Te sirve para que sea interactiva esa seccion-->
     </section>
 
 </body>

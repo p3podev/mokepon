@@ -143,6 +143,10 @@ body {
     color: #F05454;
     cursor: pointer;
 }
+#button_attack button:disabled,button[disabled]{
+    color: #DDDDDD;
+    cursor: not-allowed;
+}
 
 #button_attack img {
     height: 80px;
@@ -152,4 +156,26 @@ body {
 input {
     display: none;
 
+}
+#restart{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+#restart button{
+    width: 175px;
+    height: 50px;
+    color: #DDDDDD;
+    background-color: #F05454;
+    font-size: larger;
+    box-sizing: border-box;
+    margin-top: 15px;
+    border: 3px double #DDDDDD;
+    border-top-width: 3px;
+    font-family: 'Press Start 2P', cursive;
+    border-radius: 20px;
+}
+#restart button:hover{
+    color: #30475E;
+    cursor: pointer;
 }

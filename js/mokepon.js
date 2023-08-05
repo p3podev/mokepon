@@ -3,10 +3,10 @@ let attackEnemy = ''
 let playerLives = 3
 let enemyLives = 3
 function startGame() {
-    let selectAttackSection=document.getElementById('select_attack')
-    selectAttackSection.style.display='none'
-    let restartSection=document.getElementById('restart')
-    restartSection.style.display='none'
+    let selectAttackSection = document.getElementById('select_attack')
+    selectAttackSection.style.display = 'none'
+    let restartSection = document.getElementById('restart')
+    restartSection.style.display = 'none'
     let buttonPet = document.getElementById('button_pet')
     buttonPet.addEventListener('click', selectPetPlayer)
     let buttonFire = document.getElementById('button_fire')
@@ -18,17 +18,17 @@ function startGame() {
     let buttonRestart = document.getElementById('button_reset')
     buttonRestart.addEventListener('click', resetGame)
 }
-function resetGame(){
+function resetGame() {
     window.location.reload()
 }
 function aleatorio(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
 function selectPetPlayer() {
-    let selectAttackSection=document.getElementById('select_attack')
-    selectAttackSection.style.display='flex'
-    let selectPetSection=document.getElementById('select_pet')
-    selectPetSection.style.display='none'
+    let selectAttackSection = document.getElementById('select_attack')
+    selectAttackSection.style.display = 'flex'
+    let selectPetSection = document.getElementById('select_pet')
+    selectPetSection.style.display = 'none'
     let radioHipodoge = document.getElementById('hipodoge')
     let radioCapipepo = document.getElementById('capipepo')
     let radioRatigueya = document.getElementById('ratigueya')
@@ -53,13 +53,13 @@ function selectPetPlayer() {
     }
     selectPetEnemy()
     let buttonPet = document.getElementById('button_pet')
-    buttonPet.disabled=true
-    radioHipodoge.disabled=true
-    radioCapipepo.disabled=true
-    radioRatigueya.disabled=true
-    radioLangostelvis.disabled=true
-    radioTucapalma.disabled=true
-    radioPydos.disabled=true
+    buttonPet.disabled = true
+    radioHipodoge.disabled = true
+    radioCapipepo.disabled = true
+    radioRatigueya.disabled = true
+    radioLangostelvis.disabled = true
+    radioTucapalma.disabled = true
+    radioPydos.disabled = true
 }
 function selectPetEnemy() {
     let petRandom = aleatorio(1, 6)
@@ -97,53 +97,60 @@ function attackEnemyRandom() {
         case 3:
             attackEnemy = 'Earth'
             break;
-    } 
-    combat() 
+    }
+    combat()
 }
-function reviewLives(){
-    if (enemyLives==0){
-        createFinalMessage('CONGRATS YOU WON MOKEPON GAME 🔮🎇')     
-    }else if(playerLives==0){
+function reviewLives() {
+    if (enemyLives == 0) {
+        createFinalMessage('CONGRATS YOU WON MOKEPON GAME 🔮🎇')
+    } else if (playerLives == 0) {
         createFinalMessage('GAME OVER ❌ YOU LOST MOKEPON GAME')
     }
 }
 function createFinalMessage(finalResult) {
-    let sectionMessages = document.getElementById('messages')
-    let pharagraph = document.createElement('p')
-    pharagraph.innerHTML = finalResult
-    sectionMessages.appendChild(pharagraph);
+    let sectionMessages = document.getElementById('resultHTML')
+    sectionMessages .innerHTML = finalResult
     
+
     let buttonFire = document.getElementById('button_fire')
-    buttonFire.disabled=true
+    buttonFire.disabled = true
     let buttonWater = document.getElementById('button_water')
-    buttonWater.disabled=true
+    buttonWater.disabled = true
     let buttonEarth = document.getElementById('button_earth')
-    buttonEarth.disabled=true
-    let restartSection=document.getElementById('restart')
-    restartSection.style.display='block'
+    buttonEarth.disabled = true
+    let restartSection = document.getElementById('restart')
+    restartSection.style.display = 'block'
 }
 function createMessage(result) {
-    let sectionMessages = document.getElementById('messages')
-    let pharagraph = document.createElement('p')
-    pharagraph.innerHTML = "Your Pet attacked with " + attackPlayer + " and Enemy's pet attacked with " + attackEnemy + " -- " + result + "-- "
-    sectionMessages.appendChild(pharagraph);
+    let sectionMessages = document.getElementById('resultHTML')
+    let playersAttack = document.getElementById('players_attack')
+    let enemysAttack = document.getElementById('enemys_attack')
+    let newPlayerAttack = document.createElement('p')
+    let newEnemyAttack = document.createElement('p')
+
+    sectionMessages.innerHTML = result
+    newPlayerAttack.innerHTML = attackPlayer
+    newEnemyAttack.innerHTML = attackEnemy
+
+    playersAttack.appendChild(newPlayerAttack);
+    enemysAttack.appendChild(newEnemyAttack);
 }
 function combat() {
     let spanplayerLives = document.getElementById('player_Lives')
     let spanenemyLives = document.getElementById('enemy_Lives')
-        if (attackPlayer == attackEnemy) {
-            createMessage( '😐 YOU DRAW 😐')
-        } else if ((attackPlayer == 'Fire' && attackEnemy == 'Earth') || (attackPlayer == 'Water' && attackEnemy == 'Fire') || (attackPlayer == 'Earth' && attackEnemy == 'Water')) {
-            createMessage('🎇 YOU WIN 🎇')
-            enemyLives--
-            spanenemyLives.innerHTML = enemyLives
-        } else {
-            createMessage( '😪 YOU LOSE 😪')
-            playerLives--
-            spanplayerLives.innerHTML = playerLives
-        }
-        //Revisar Vidas
-        reviewLives()
+    if (attackPlayer == attackEnemy) {
+        createMessage('😐 YOU DRAW 😐')
+    } else if ((attackPlayer == 'Fire' && attackEnemy == 'Earth') || (attackPlayer == 'Water' && attackEnemy == 'Fire') || (attackPlayer == 'Earth' && attackEnemy == 'Water')) {
+        createMessage('🎇 YOU WIN 🎇')
+        enemyLives--
+        spanenemyLives.innerHTML = enemyLives
+    } else {
+        createMessage('😪 YOU LOSE 😪')
+        playerLives--
+        spanplayerLives.innerHTML = playerLives
+    }
+    //Revisar Vidas
+    reviewLives()
 }
 function attackFire() {
     attackPlayer = 'Fire'

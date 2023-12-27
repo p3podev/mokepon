@@ -237,3 +237,15 @@ input {
 #players_attack p + #enemys_attack p{
     margin: 10px;
 }
+
+@media(max-width:360px){
+    #pet_section {
+        flex-direction: row;
+    }
+    .one_card_pet {
+        flex-direction: column;
+    }
+    .two_card_pet {
+        flex-direction: column;
+    }
+}

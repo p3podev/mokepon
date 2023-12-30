@@ -224,16 +224,12 @@ input {
     text-align: center;
 
 }
-#players_attack{
+#players_attack, #enemys_attack{
     display:flex;
     flex-direction: column-reverse;
     margin: 0px;
 }
-#enemys_attack{
-    display:flex;
-    flex-direction: column-reverse;
-    margin: 0px;
-}
+
 #players_attack p + #enemys_attack p{
     margin: 10px;
 }
@@ -247,5 +243,9 @@ input {
     }
     .two_card_pet {
         flex-direction: column;
+    }
+    #button_attack {
+        flex-direction: column;
+        gap: 0px;
     }
 }

@@ -61,21 +61,14 @@ body {
     gap: 50px
 }
 
-.one_card_pet {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    grid-template-rows: repeat(2, 1fr);
     align-items: center;
     gap: 10px
 }
 
-.two_card_pet {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 10px
-}
 
 .mokepon_card {
     width: 180px;
@@ -98,30 +91,9 @@ body {
     cursor: pointer;
 }
 
-#hipodoge:checked+.mokepon_card {
+#Hipodoge:checked+.mokepon_card,#Capipepo:checked+.mokepon_card,#Ratigueya:checked+.mokepon_card,#Gargolin:checked+.mokepon_card,#Tucapalma:checked+.mokepon_card,#Pydos:checked+.mokepon_card{
     color: #F05454;
 }
-
-#capipepo:checked+.mokepon_card {
-    color: #F05454;
-}
-
-#ratigueya:checked+.mokepon_card {
-    color: #F05454;
-}
-
-#langostelvis:checked+.mokepon_card {
-    color: #F05454;
-}
-
-#tucapalma:checked+.mokepon_card {
-    color: #F05454;
-}
-
-#pydos:checked+.mokepon_card {
-    color: #F05454;
-}
-
 .mokepon_card img {
     width: 90px;
 }
@@ -235,14 +207,12 @@ input {
 }
 
 @media(max-width:360px){
-    #pet_section {
-        flex-direction: row;
-    }
-    .one_card_pet {
-        flex-direction: column;
-    }
-    .two_card_pet {
-        flex-direction: column;
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(2 , 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        align-items: center;
+        gap: 10px
     }
     #button_attack {
         flex-direction: column;

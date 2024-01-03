@@ -6,12 +6,6 @@ const buttonWater = document.getElementById('button_water')
 const buttonEarth = document.getElementById('button_earth')
 const buttonRestart = document.getElementById('button_reset')
 const selectPetSection = document.getElementById('select_pet')
-const radioHipodoge = document.getElementById('hipodoge')
-const radioCapipepo = document.getElementById('capipepo')
-const radioRatigueya = document.getElementById('ratigueya')
-const radioLangostelvis = document.getElementById('langostelvis')
-const radioTucapalma = document.getElementById('tucapalma')
-const radioPydos = document.getElementById('pydos')
 const spanPetPlayer = document.getElementById('pet_Player')
 const spanPetEnemy = document.getElementById('pet_Enemy')
 const sectionMessages = document.getElementById('resultHTML')
@@ -19,75 +13,101 @@ const playersAttack = document.getElementById('players_attack')
 const enemysAttack = document.getElementById('enemys_attack')
 const spanplayerLives = document.getElementById('player_Lives')
 const spanenemyLives = document.getElementById('enemy_Lives')
-
-let mokepones= []
+const cardsContainer = document.getElementById('cardsContainer')
+let mokepones = []
 let attackPlayer = ''
 let attackEnemy = ''
+let mokeponsOption
+let radioHipodoge
+let radioCapipepo
+let radioRatigueya
+let radioGargolin
+let radioTucapalma
+let radioPydos
 let playerLives = 3
 let enemyLives = 3
-
-class Mokepon{ 
-    constructor(name,photo, life){
-        this.name=name
-        this.photo=photo
-        this.life=life
-        this.attacks=[]
+class Mokepon {
+    constructor(name, photo, life) {
+        this.name = name
+        this.photo = photo
+        this.life = life
+        this.attacks = []
     }
 }
 //Objetos Instancia que vienen desde la clase se rellena con las propiedades definidas de la clase
-let hipodoge=new Mokepon('Hipodoge','https://media.discordapp.net/attachments/1052032664024137803/1136839963376365628/5c9a0195b7e3470363aa7b45.png?width=522&height=468',5)
-let capipepo=new Mokepon('Capipepo','https://media.discordapp.net/attachments/1052032664024137803/1136831710609281144/capipepo.png?width=421&height=468',5)
-let ratigueya=new Mokepon('Ratigueya','https://media.discordapp.net/attachments/1052032664024137803/1136831711607521391/ratigueya.png?width=566&height=468',5)
-let langostelvis=new Mokepon('Gargolin','https://media.discordapp.net/attachments/1052032664024137803/1136831711108415598/langostelvis.png?width=471&height=468',5)
-let tucapalma=new Mokepon('Tucapalma','https://media.discordapp.net/attachments/1052032664024137803/1136831711842418738/tucapalma.png?width=444&height=468',5)
-let pydos=new Mokepon('Pydos','https://media.discordapp.net/attachments/1052032664024137803/1136831711355867228/pydos.png',5)
+let Hipodoge = new Mokepon('Hipodoge', 'https://media.discordapp.net/attachments/1052032664024137803/1136839963376365628/5c9a0195b7e3470363aa7b45.png?width=522&height=468', 5)
+let Capipepo = new Mokepon('Capipepo', 'https://media.discordapp.net/attachments/1052032664024137803/1136831710609281144/capipepo.png?width=421&height=468', 5)
+let Ratigueya = new Mokepon('Ratigueya', 'https://media.discordapp.net/attachments/1052032664024137803/1136831711607521391/ratigueya.png?width=566&height=468', 5)
+let Gargolin = new Mokepon('Gargolin', 'https://media.discordapp.net/attachments/1052032664024137803/1136831711108415598/langostelvis.png?width=471&height=468', 5)
+let Tucapalma = new Mokepon('Tucapalma', 'https://media.discordapp.net/attachments/1052032664024137803/1136831711842418738/tucapalma.png?width=444&height=468', 5)
+let Pydos = new Mokepon('Pydos', 'https://media.discordapp.net/attachments/1052032664024137803/1136831711355867228/pydos.png', 5)
 
-//mokepones.push(hipodoge,capipepo,ratigueya,langostelvis,tucapalma,pydos)
+//Metodo Push empuja valores dentro del arreglo
+mokepones.push(Hipodoge, Capipepo, Ratigueya, Gargolin, Tucapalma, Pydos)
 
 //Objetos Literales: Informacion en el Objeto (Desde 0 sin parametros de la clase)
-hipodoge.attacks.push(
-    {name: 'Water',id:'button_water'},
-    {name: 'Water',id:'button_water'},
-    {name: 'Water',id:'button_water'},
-    {name: 'Fire',id:'button_fire'},
-    {name: 'Earth',id:'button_earth'}
+Hipodoge.attacks.push(
+    { name: 'Water', id: 'button_water' },
+    { name: 'Water', id: 'button_water' },
+    { name: 'Water', id: 'button_water' },
+    { name: 'Fire', id: 'button_fire' },
+    { name: 'Earth', id: 'button_earth' }
 )
-capipepo.attacks.push(
-    {name: 'Earth',id:'button_earth'},
-    {name: 'Earth',id:'button_earth'},
-    {name: 'Earth',id:'button_earth'},
-    {name: 'Fire',id:'button_fire'},
-    {name: 'Water',id:'button_Water'}
+Capipepo.attacks.push(
+    { name: 'Earth', id: 'button_earth' },
+    { name: 'Earth', id: 'button_earth' },
+    { name: 'Earth', id: 'button_earth' },
+    { name: 'Fire', id: 'button_fire' },
+    { name: 'Water', id: 'button_Water' }
 )
-ratigueya.attacks.push(
-    {name: 'Fire',id:'button_fire'},
-    {name: 'Fire',id:'button_fire'},
-    {name: 'Fire',id:'button_fire'},
-    {name: 'Water',id:'button_water'},
-    {name: 'Earth',id:'button_earth'}
+Ratigueya.attacks.push(
+    { name: 'Fire', id: 'button_fire' },
+    { name: 'Fire', id: 'button_fire' },
+    { name: 'Fire', id: 'button_fire' },
+    { name: 'Water', id: 'button_water' },
+    { name: 'Earth', id: 'button_earth' }
 )
-langostelvis.attacks.push(
-    {name: 'Water',id:'button_water'},
-    {name: 'Water',id:'button_water'},
-    {name: 'Fire',id:'button_fire'},
-    {name: 'Fire',id:'button_fire'},
-    {name: 'Earth',id:'button_earth'}
+Gargolin.attacks.push(
+    { name: 'Water', id: 'button_water' },
+    { name: 'Water', id: 'button_water' },
+    { name: 'Fire', id: 'button_fire' },
+    { name: 'Fire', id: 'button_fire' },
+    { name: 'Earth', id: 'button_earth' }
 )
-tucapalma.attacks.push(
-    {name: 'Water',id:'button_water'},
-    {name: 'Water',id:'button_water'},
-    {name: 'Earth',id:'button_earth'},
-    {name: 'Earth',id:'button_earth'},
-    {name: 'Fire',id:'button_fire'}
+Tucapalma.attacks.push(
+    { name: 'Water', id: 'button_water' },
+    { name: 'Water', id: 'button_water' },
+    { name: 'Earth', id: 'button_earth' },
+    { name: 'Earth', id: 'button_earth' },
+    { name: 'Fire', id: 'button_fire' }
 )
-pydos.attacks.push(
-    {name: 'Earth',id:'button_earth'},
-    {name: 'Earth',id:'button_earth'},
-    {name: 'Fire',id:'button_fire'},
-    {name: 'Fire',id:'button_fire'},
-    {name: 'Water',id:'button_water'}
+Pydos.attacks.push(
+    { name: 'Earth', id: 'button_earth' },
+    { name: 'Earth', id: 'button_earth' },
+    { name: 'Fire', id: 'button_fire' },
+    { name: 'Fire', id: 'button_fire' },
+    { name: 'Water', id: 'button_water' }
 )
 function startGame() {
+    //foreach nos genera una iteracion (For) de lo que hay dentro de un arreglo 
+    mokepones.forEach((mokepon) => {
+        // Generando Estructuras llamadas templates literarios (Implementar HTML con la informacion de JS)
+        mokeponsOption = `
+        <input type="radio" name="pet" id=${mokepon.name}>
+        <label class="mokepon_card" for="${mokepon.name}">
+            <p>${mokepon.name}</p>
+            <img src="${mokepon.photo}"
+                alt="${mokepon.name}">
+        </label>
+        `
+        cardsContainer.innerHTML += mokeponsOption
+        radioHipodoge = document.getElementById('Hipodoge')
+        radioCapipepo = document.getElementById('Capipepo')
+        radioRatigueya = document.getElementById('Ratigueya')
+        radioGargolin = document.getElementById('Gargolin')
+        radioTucapalma = document.getElementById('Tucapalma')
+        radioPydos = document.getElementById('Pydos')
+    })
     selectAttackSection.style.display = 'none'
     restartSection.style.display = 'none'
     buttonPet.addEventListener('click', selectPetPlayer)
@@ -106,17 +126,17 @@ function selectPetPlayer() {
     selectAttackSection.style.display = 'flex'
     selectPetSection.style.display = 'none'
     if (radioHipodoge.checked) {
-        spanPetPlayer.innerHTML = ' Hipodoge '
+        spanPetPlayer.innerHTML = radioHipodoge.id
     } else if (radioCapipepo.checked) {
-        spanPetPlayer.innerHTML = ' Capipepo '
+        spanPetPlayer.innerHTML = radioCapipepo.id
     } else if (radioRatigueya.checked) {
-        spanPetPlayer.innerHTML = ' Ratigueya '
-    } else if (radioLangostelvis.checked) {
-        spanPetPlayer.innerHTML = ' Gargolin '
+        spanPetPlayer.innerHTML = radioRatigueya.id
+    } else if (radioGargolin.checked) {
+        spanPetPlayer.innerHTML = radioGargolin.id
     } else if (radioTucapalma.checked) {
-        spanPetPlayer.innerHTML = ' Tucapalma '
+        spanPetPlayer.innerHTML = radioTucapalma.id
     } else if (radioPydos.checked) {
-        spanPetPlayer.innerHTML = ' Pydos '
+        spanPetPlayer.innerHTML = radioPydos.id
     } else {
         alert("Selecciona primero una Pet")
     }
@@ -125,32 +145,13 @@ function selectPetPlayer() {
     radioHipodoge.disabled = true
     radioCapipepo.disabled = true
     radioRatigueya.disabled = true
-    radioLangostelvis.disabled = true
+    radioGargolin.disabled = true
     radioTucapalma.disabled = true
     radioPydos.disabled = true
 }
 function selectPetEnemy() {
-    let petRandom = aleatorio(1, 6)
-    switch (petRandom) {
-        case 1:
-            spanPetEnemy.innerHTML = ' Hipodoge '
-            break;
-        case 2:
-            spanPetEnemy.innerHTML = ' Capipepo '
-            break;
-        case 3:
-            spanPetEnemy.innerHTML = ' Ratigueya '
-            break;
-        case 4:
-            spanPetEnemy.innerHTML = ' Gargolin '
-            break;
-        case 5:
-            spanPetEnemy.innerHTML = ' Tucapalma '
-            break;
-        case 6:
-            spanPetEnemy.innerHTML = ' Pydos '
-            break;
-    }
+    let petRandom = aleatorio(0, (mokepones.length -1))
+    spanPetEnemy.innerHTML=mokepones[petRandom].name
 }
 function attackEnemyRandom() {
     let attackRandom = aleatorio(1, 3)

@@ -19,10 +19,74 @@ const playersAttack = document.getElementById('players_attack')
 const enemysAttack = document.getElementById('enemys_attack')
 const spanplayerLives = document.getElementById('player_Lives')
 const spanenemyLives = document.getElementById('enemy_Lives')
+
+let mokepones= []
 let attackPlayer = ''
 let attackEnemy = ''
 let playerLives = 3
 let enemyLives = 3
+
+class Mokepon{ 
+    constructor(name,photo, life){
+        this.name=name
+        this.photo=photo
+        this.life=life
+        this.attacks=[]
+    }
+}
+//Objetos Instancia que vienen desde la clase se rellena con las propiedades definidas de la clase
+let hipodoge=new Mokepon('Hipodoge','https://media.discordapp.net/attachments/1052032664024137803/1136839963376365628/5c9a0195b7e3470363aa7b45.png?width=522&height=468',5)
+let capipepo=new Mokepon('Capipepo','https://media.discordapp.net/attachments/1052032664024137803/1136831710609281144/capipepo.png?width=421&height=468',5)
+let ratigueya=new Mokepon('Ratigueya','https://media.discordapp.net/attachments/1052032664024137803/1136831711607521391/ratigueya.png?width=566&height=468',5)
+let langostelvis=new Mokepon('Gargolin','https://media.discordapp.net/attachments/1052032664024137803/1136831711108415598/langostelvis.png?width=471&height=468',5)
+let tucapalma=new Mokepon('Tucapalma','https://media.discordapp.net/attachments/1052032664024137803/1136831711842418738/tucapalma.png?width=444&height=468',5)
+let pydos=new Mokepon('Pydos','https://media.discordapp.net/attachments/1052032664024137803/1136831711355867228/pydos.png',5)
+
+//mokepones.push(hipodoge,capipepo,ratigueya,langostelvis,tucapalma,pydos)
+
+//Objetos Literales: Informacion en el Objeto (Desde 0 sin parametros de la clase)
+hipodoge.attacks.push(
+    {name: 'Water',id:'button_water'},
+    {name: 'Water',id:'button_water'},
+    {name: 'Water',id:'button_water'},
+    {name: 'Fire',id:'button_fire'},
+    {name: 'Earth',id:'button_earth'}
+)
+capipepo.attacks.push(
+    {name: 'Earth',id:'button_earth'},
+    {name: 'Earth',id:'button_earth'},
+    {name: 'Earth',id:'button_earth'},
+    {name: 'Fire',id:'button_fire'},
+    {name: 'Water',id:'button_Water'}
+)
+ratigueya.attacks.push(
+    {name: 'Fire',id:'button_fire'},
+    {name: 'Fire',id:'button_fire'},
+    {name: 'Fire',id:'button_fire'},
+    {name: 'Water',id:'button_water'},
+    {name: 'Earth',id:'button_earth'}
+)
+langostelvis.attacks.push(
+    {name: 'Water',id:'button_water'},
+    {name: 'Water',id:'button_water'},
+    {name: 'Fire',id:'button_fire'},
+    {name: 'Fire',id:'button_fire'},
+    {name: 'Earth',id:'button_earth'}
+)
+tucapalma.attacks.push(
+    {name: 'Water',id:'button_water'},
+    {name: 'Water',id:'button_water'},
+    {name: 'Earth',id:'button_earth'},
+    {name: 'Earth',id:'button_earth'},
+    {name: 'Fire',id:'button_fire'}
+)
+pydos.attacks.push(
+    {name: 'Earth',id:'button_earth'},
+    {name: 'Earth',id:'button_earth'},
+    {name: 'Fire',id:'button_fire'},
+    {name: 'Fire',id:'button_fire'},
+    {name: 'Water',id:'button_water'}
+)
 function startGame() {
     selectAttackSection.style.display = 'none'
     restartSection.style.display = 'none'

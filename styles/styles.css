@@ -189,6 +189,7 @@ input {
     font-size: x-large;
     align-self: start;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .attacks_enemy {
@@ -198,14 +199,14 @@ input {
 }
 #players_attack, #enemys_attack ,#resultHTML{
     display:flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     margin: 0px;
     justify-content: center;
     align-items: center;
 }
 
-#players_attack p + #enemys_attack p + #resultHTML p{
-    margin: 0px;
+#players_attack, p + #enemys_attack,p + #resultHTML,p {
+    margin-bottom : 7px;
 }
 
 @media(max-width:360px){

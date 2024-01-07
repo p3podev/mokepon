@@ -37,8 +37,7 @@ let indexPlayerAttack
 let indexEnemyAttack
 let winPlayer = 0
 let winEnemy = 0
-let playerLives = 3
-let enemyLives = 3
+let ct = -1
 let fImg = 'https://media.discordapp.net/attachments/1052032664024137803/1136862631622344765/image.png'
 let wImg = 'https://media.discordapp.net/attachments/1052032664024137803/1136862632066961488/image_3.png'
 let eImg = 'https://media.discordapp.net/attachments/1052032664024137803/1136862631844655235/image_1.png'
@@ -212,9 +211,10 @@ function sequenceAttack() {
                 button.disabled = true
 
             }
+            ct++
             combat()
         })
-        
+
     })
 
 }
@@ -234,11 +234,11 @@ function randomOrder() {
 function reviewVictories() {
     if (attacksPlayer.length === randomEnemyAttack.length) {
         if (winPlayer > winEnemy) {
-            createFinalMessage('CONGRATS YOU WON MOKEPON GAME 🔮🎇')
+            setTimeout(()=>{createFinalMessage('CONGRATS YOU WON MOKEPON GAME 🔮🎇')}, 20);
         } else if (winEnemy > winPlayer) {
-            createFinalMessage('GAME OVER ❌ YOU LOST MOKEPON GAME')
+            setTimeout(()=>{createFinalMessage('GAME OVER ❌ YOU LOST MOKEPON GAME')}, 20);
         } else {
-            createFinalMessage('😐 YOU DRAW 😐')
+            setTimeout(()=>{createFinalMessage('😐 YOU DRAW 😐')}, 20);
         }
     }
 }
@@ -252,13 +252,13 @@ function createMessage(result) {
     let newResult = document.createElement('p')
     newPlayerAttack.innerHTML = indexPlayerAttack
     newEnemyAttack.innerHTML = indexEnemyAttack
-    newResult.innerHTML=result
-    if(result==='WIN'){
-        newResult.style.background='#557C55'
-    }else if((result==='LOSE')){
-        newResult.style.background='#F05454'
-    }else{
-        newResult.style.background='#001B79'
+    newResult.innerHTML = result
+    if (result === 'WIN') {
+        newResult.style.background = '#557C55'
+    } else if ((result === 'LOSE')) {
+        newResult.style.background = '#F05454'
+    } else {
+        newResult.style.background = '#001B79'
     }
     playersAttack.appendChild(newPlayerAttack);
     enemysAttack.appendChild(newEnemyAttack);
@@ -270,26 +270,20 @@ function saveCombat(player, enemy) {
 
 }
 function combat() {
-    if (attacksPlayer.length === randomEnemyAttack.length) {
-
-        for (let i = 0; i < attacksPlayer.length; i++) {
-            if (attacksPlayer[i] == randomEnemyAttack[i]) {
-                saveCombat(i, i)
-                createMessage('DRAW')
-            } else if ((attacksPlayer[i] == 'Fire' && randomEnemyAttack[i] == 'Earth') || (attacksPlayer[i] == 'Water' && randomEnemyAttack[i] == 'Fire') || (attacksPlayer[i] == 'Earth' && randomEnemyAttack[i] == 'Water')) {
-                saveCombat(i, i)
-                createMessage('WIN')
-                winPlayer++
-                spanplayerLives.innerHTML = winPlayer
-            } else {
-                saveCombat(i, i)
-                createMessage('LOSE')
-                winEnemy++
-                spanenemyLives.innerHTML = winEnemy
-            }
-        }
+    if (attacksPlayer[ct] == randomEnemyAttack[ct]) {
+        saveCombat(ct, ct)
+        createMessage('DRAW')
+    } else if ((attacksPlayer[ct] == 'Fire' && randomEnemyAttack[ct] == 'Earth') || (attacksPlayer[ct] == 'Water' && randomEnemyAttack[ct] == 'Fire') || (attacksPlayer[ct] == 'Earth' && randomEnemyAttack[ct] == 'Water')) {
+        saveCombat(ct, ct)
+        createMessage('WIN')
+        winPlayer++
+        spanplayerLives.innerHTML = winPlayer
+    } else {
+        saveCombat(ct, ct)
+        createMessage('LOSE')
+        winEnemy++
+        spanenemyLives.innerHTML = winEnemy
     }
-
     //Revisar Vidas
     reviewVictories()
 }

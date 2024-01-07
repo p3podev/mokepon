@@ -7,6 +7,7 @@ const selectPetSection = document.getElementById('select_pet')
 const spanPetPlayer = document.getElementById('pet_Player')
 const spanPetEnemy = document.getElementById('pet_Enemy')
 const sectionMessages = document.getElementById('resultHTML')
+const finalMessages = document.getElementById('finalresultHTML')
 const playersAttack = document.getElementById('players_attack')
 const enemysAttack = document.getElementById('enemys_attack')
 const spanplayerLives = document.getElementById('player_Lives')
@@ -242,20 +243,26 @@ function reviewVictories() {
     }
 }
 function createFinalMessage(finalResult) {
-    sectionMessages.innerHTML = finalResult
-    buttonFire.disabled = true
-    buttonWater.disabled = true
-    buttonEarth.disabled = true
+    finalMessages.innerHTML = finalResult
     restartSection.style.display = 'block'
 }
 function createMessage(result) {
     let newPlayerAttack = document.createElement('p')
     let newEnemyAttack = document.createElement('p')
-    sectionMessages.innerHTML = result
+    let newResult = document.createElement('p')
     newPlayerAttack.innerHTML = indexPlayerAttack
     newEnemyAttack.innerHTML = indexEnemyAttack
+    newResult.innerHTML=result
+    if(result==='WIN'){
+        newResult.style.background='#557C55'
+    }else if((result==='LOSE')){
+        newResult.style.background='#F05454'
+    }else{
+        newResult.style.background='#001B79'
+    }
     playersAttack.appendChild(newPlayerAttack);
     enemysAttack.appendChild(newEnemyAttack);
+    sectionMessages.appendChild(newResult);
 }
 function saveCombat(player, enemy) {
     indexPlayerAttack = attacksPlayer[player]
@@ -268,15 +275,15 @@ function combat() {
         for (let i = 0; i < attacksPlayer.length; i++) {
             if (attacksPlayer[i] == randomEnemyAttack[i]) {
                 saveCombat(i, i)
-                createMessage('😐 YOU DRAW 😐')
+                createMessage('DRAW')
             } else if ((attacksPlayer[i] == 'Fire' && randomEnemyAttack[i] == 'Earth') || (attacksPlayer[i] == 'Water' && randomEnemyAttack[i] == 'Fire') || (attacksPlayer[i] == 'Earth' && randomEnemyAttack[i] == 'Water')) {
                 saveCombat(i, i)
-                createMessage('🎇 YOU WIN 🎇')
+                createMessage('WIN')
                 winPlayer++
                 spanplayerLives.innerHTML = winPlayer
             } else {
                 saveCombat(i, i)
-                createMessage('😪 YOU LOSE 😪 ')
+                createMessage('LOSE')
                 winEnemy++
                 spanenemyLives.innerHTML = winEnemy
             }

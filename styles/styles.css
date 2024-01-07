@@ -30,11 +30,11 @@ body {
 
 .title {
     width: 650px;
-    height: 50px;
+    height: 15px;
     text-align: center;
     -webkit-text-stroke: 1.2px #F05454;
     color: transparent;
-    font-size: 2.5em;
+    font-size: 2em;
 }
 
 #tittle_section {
@@ -135,7 +135,7 @@ button[disabled] {
 }
 
 #button_attack img {
-    height: 80px;
+    height: 60px;
 }
 
 input {
@@ -155,8 +155,8 @@ input {
 }
 
 #restart button {
-    width: 175px;
-    height: 50px;
+    width: 170px;
+    height: 45px;
     color: #DDDDDD;
     background-color: #F05454;
     font-size: larger;
@@ -165,6 +165,7 @@ input {
     border-top-width: 3px;
     font-family: 'Press Start 2P', cursive;
     border-radius: 20px;
+    font-size: 1em;
 }
 
 #restart button:hover {
@@ -187,7 +188,7 @@ input {
     color: #F05454;
     font-size: x-large;
     align-self: start;
-    margin-top: -10px;
+    margin-top: 20px;
 }
 
 .attacks_enemy {
@@ -195,14 +196,16 @@ input {
     text-align: center;
 
 }
-#players_attack, #enemys_attack{
+#players_attack, #enemys_attack ,#resultHTML{
     display:flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     margin: 0px;
+    justify-content: center;
+    align-items: center;
 }
 
-#players_attack p + #enemys_attack p{
-    margin: 10px;
+#players_attack p + #enemys_attack p + #resultHTML p{
+    margin: 0px;
 }
 
 @media(max-width:360px){

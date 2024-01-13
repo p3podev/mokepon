@@ -9,7 +9,11 @@ body {
     font-family: 'Press Start 2P', cursive;
 }
 
-#button_pet {
+#button_pet,
+.Move_Up,
+.Move_Down,
+.Move_Left,
+.Move_Right {
     width: 175px;
     height: 50px;
     color: #DDDDDD;
@@ -23,13 +27,29 @@ body {
     border-radius: 20px;
 }
 
-#button_pet:hover {
+#button_pet:hover,
+.Move_Up:hover,
+.Move_Down:hover,
+.Move_Left:hover,
+.Move_Right:hover {
     color: #30475E;
     cursor: pointer;
 }
 
+.button_move {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
 .title {
-    width: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 1025px;
     height: 15px;
     text-align: center;
     -webkit-text-stroke: 1.2px #F05454;
@@ -37,12 +57,15 @@ body {
     font-size: 2em;
 }
 
-#tittle_section {
-    display: flex;
+#show_map {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
 
+#map {
+    border: 2px solid #DDDDDD;
+    border-radius: 20px;
 }
 
 #select_pet {
@@ -63,7 +86,7 @@ body {
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(3 , 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     align-items: center;
     gap: 10px
@@ -91,9 +114,15 @@ body {
     cursor: pointer;
 }
 
-#Hipodoge:checked+.mokepon_card,#Capipepo:checked+.mokepon_card,#Ratigueya:checked+.mokepon_card,#Gargolin:checked+.mokepon_card,#Tucapalma:checked+.mokepon_card,#Pydos:checked+.mokepon_card{
+#Hipodoge:checked+.mokepon_card,
+#Capipepo:checked+.mokepon_card,
+#Ratigueya:checked+.mokepon_card,
+#Gargolin:checked+.mokepon_card,
+#Tucapalma:checked+.mokepon_card,
+#Pydos:checked+.mokepon_card {
     color: #F05454;
 }
+
 .mokepon_card img {
     width: 90px;
 }
@@ -109,7 +138,7 @@ body {
     gap: 25px;
 }
 
-#button_attack button { 
+#button_attack button {
     background-color: #222831;
     display: flex;
     align-items: center;
@@ -197,26 +226,33 @@ input {
     text-align: center;
 
 }
-#players_attack, #enemys_attack ,#resultHTML{
-    display:flex;
+
+#players_attack,
+#enemys_attack,
+#resultHTML {
+    display: flex;
     flex-direction: column-reverse;
     margin: 0px;
     justify-content: center;
     align-items: center;
 }
 
-#players_attack, p + #enemys_attack,p + #resultHTML,p {
-    margin-bottom : 7px;
+#players_attack,
+p+#enemys_attack,
+p+#resultHTML,
+p {
+    margin-bottom: 7px;
 }
 
-@media(max-width:360px){
+@media(max-width:360px) {
     .cards {
         display: grid;
-        grid-template-columns: repeat(2 , 1fr);
+        grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(3, 1fr);
         align-items: center;
         gap: 10px
     }
+
     #button_attack {
         flex-direction: column;
         gap: 0px;

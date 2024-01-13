@@ -9,14 +9,11 @@
 </head>
 
 <body>
-    <div id="tittle_section">
-        <h1 class="title">MOKEPON</h1>
-    </div>
     <section id="select_pet">
+        <h1 class="title">MOKEPON</h1>
         <h4>Choose your pet:</h4>
         <section id="pet_section">
-            <div id="cardsContainer"class="cards">
-
+            <div id="cardsContainer" class="cards">
             </div>
         </section>
         <button id="button_pet">Select</button>
@@ -28,8 +25,20 @@
         tucapalma -> Agua y Tierra
         pydos -> Tierra y Fuego -->
     </section>
-
+    <section id="show_map">
+        <h1 class="title"> Travel the map with your Mokepon</h1>
+        <br>
+        <br>
+        <canvas id="map"></canvas>
+        <div class="button_move">
+            <button class="Move_Up" onmouseup="stopMove()" onmousedown="mokeponUp()">Move Up</button>
+            <button class="Move_Down" onmouseup="stopMove()" onmousedown="mokeponDown()">Move Down</button>
+            <button class="Move_Left" onmouseup="stopMove()" onmousedown="mokeponLeft()">Move Left</button>
+            <button class="Move_Right" onmouseup="stopMove()" onmousedown="mokeponRight()">Move Right</button>
+        </div>
+    </section>
     <section id="select_attack">
+        <h1 class="title">MOKEPON</h1>
         <h4>Choose your attack:</h4>
         <div id="button_attack">
 
@@ -47,9 +56,9 @@
                 <p id="pet_Player"></p>
                 <p><span id="player_Lives">0</span> 🏆</p>
                 <div id="players_attack"></div>
-                
+
             </div>
-            <div >
+            <div>
                 <p class="versus">VS</p>
                 <br>
                 <div id="resultHTML"></div>

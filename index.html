@@ -33,14 +33,18 @@
             <canvas id="map"></canvas>
             <div class="button_move">
                 <div class="button_up">
-                    <button class="Move_Up" onmouseup="stopMove()" onmousedown="mokeponUp()">↑</button>
+                    <button class="Move_Up" onmouseup="stopMove()" ontouchend="stopMove()"
+                        onmousedown="mokeponUp()" ontouchstart="mokeponUp()">↑</button>
                 </div>
                 <div class="button_linear">
-                    <button class="Move_Left" onmouseup="stopMove()" onmousedown="mokeponLeft()">↓</button>
-                    <button class="Move_Right" onmouseup="stopMove()" onmousedown="mokeponRight()">↑</button>
+                    <button class="Move_Left" onmouseup="stopMove()" ontouchend="stopMove()" 
+                        onmousedown="mokeponLeft()" ontouchstart="mokeponLeft()">↓</button>
+                    <button class="Move_Right" onmouseup="stopMove()" ontouchend="stopMove()"
+                        onmousedown="mokeponRight()" ontouchstart="mokeponRight()">↑</button>
                 </div>
                 <div class="button_down">
-                    <button class="Move_Down" onmouseup="stopMove()" onmousedown="mokeponDown()">↓</button>
+                    <button class="Move_Down" onmouseup="stopMove()" ontouchend="stopMove()"
+                        onmousedown="mokeponDown()" ontouchstart="mokeponDown()">↓</button>
                 </div>
             </div>
         </div>

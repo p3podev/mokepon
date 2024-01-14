@@ -15,7 +15,7 @@ const spanenemyLives = document.getElementById('enemy_Lives')
 const cardsContainer = document.getElementById('cardsContainer')
 const sectionShowMap = document.getElementById('show_map')
 const map = document.getElementById('map')
-
+const widthMaxMap=460
 
 let mokepones = []
 let mokeponsOption
@@ -28,7 +28,6 @@ let radioPydos
 let petPlayer
 let petEnemy
 let myMokepon
-let enemyMokepon
 let rivalsMokepon = []
 let MokeponsAttacks
 let buttonWater
@@ -49,21 +48,27 @@ let canvas = map.getContext("2d")
 let interval
 let backgroundMap = new Image()
 backgroundMap.src = 'https://cdn.discordapp.com/attachments/1052032664024137803/1195226464736526346/mokeponMap.jpg?ex=65b33863&is=65a0c363&hm=1f8aeed65faad77f92bc6fc15d69dbdbf3f12fc2139042630dca5b2e6c099266&'
-
+let widthMap=window.innerWidth-20
+if(widthMap>widthMaxMap){
+    widthMap=widthMaxMap-20
+}
+let heightMap =widthMap*3/4
+map.height=heightMap
+map.width=widthMap
 let fImg = 'https://media.discordapp.net/attachments/1052032664024137803/1136862631622344765/image.png'
 let wImg = 'https://media.discordapp.net/attachments/1052032664024137803/1136862632066961488/image_3.png'
 let eImg = 'https://media.discordapp.net/attachments/1052032664024137803/1136862631844655235/image_1.png'
 
 class Mokepon {
-    constructor(name, photo, life, photoMap, x = aleatorio(81, 280), y = aleatorio(41, 200)) {
+    constructor(name, photo, life, photoMap) {
         this.name = name
         this.photo = photo
         this.life = life
         this.attacks = []
-        this.x = x
-        this.y = y
-        this.width = 40
-        this.height = 40
+        this.width = 50
+        this.height = 50
+        this.x = aleatorio(this.width +1 , widthMap-this.width)
+        this.y = aleatorio(this.height +1, heightMap -this.height)
         this.mapPic = new Image()
         this.mapPic.src = photoMap
         this.speedX = 0
@@ -77,7 +82,6 @@ class Mokepon {
             this.width,
             this.height)
     }
-
 }
 
 //Objetos Instancia que vienen desde la clase se rellena con las propiedades definidas de la clase
@@ -135,11 +139,10 @@ Pydos.attacks.push(
     { name: 'Fire', id: 'button_fire', img: fImg },
     { name: 'Water', id: 'button_water', img: wImg }
 )
-
 function startGame() {
+    sectionShowMap.style.display = 'none'
     selectAttackSection.style.display = 'none'
     restartSection.style.display = 'none'
-    sectionShowMap.style.display = 'none'
     //foreach nos genera una iteracion (For) de lo que hay dentro de un arreglo 
     mokepones.forEach((mokepon) => {
         // Generando Estructuras llamadas templates literarios (Implementar HTML con la informacion de JS)
@@ -254,7 +257,6 @@ function sequenceAttack() {
 
 }
 function selectPetEnemy(enemy) {
-
     spanPetEnemy.innerHTML = enemy.name
     petEnemy = enemy.name
     enemyMokeponAttack = enemy.attacks
@@ -265,7 +267,6 @@ function selectPetEnemy(enemy) {
     randomEnemyAttack = extrackEnemyAttack.sort(randomOrder);
     sequenceAttack()
 }
-
 function randomOrder() {
     return Math.random() - 0.5;
 }
@@ -339,8 +340,6 @@ function rivals() {
         }
     })
 }
-
-
 function drawCanvas() {
     myMokepon.x = myMokepon.x + myMokepon.speedX
     myMokepon.y = myMokepon.y + myMokepon.speedY
@@ -439,8 +438,6 @@ function pushedKey(event) {
     }
 }
 function starMap() {
-    map.width = 320
-    map.height = 240
     myMokepon = getMokeponObject(petPlayer)
     myMokepon.x = 0
     myMokepon.y = 0

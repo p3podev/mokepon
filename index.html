@@ -26,15 +26,23 @@
         pydos -> Tierra y Fuego -->
     </section>
     <section id="show_map">
-        <h1 class="title"> Travel the map with your Mokepon</h1>
+        <h1 class="title"> Mokepon Map</h1>
         <br>
         <br>
-        <canvas id="map"></canvas>
-        <div class="button_move">
-            <button class="Move_Up" onmouseup="stopMove()" onmousedown="mokeponUp()">Move Up</button>
-            <button class="Move_Down" onmouseup="stopMove()" onmousedown="mokeponDown()">Move Down</button>
-            <button class="Move_Left" onmouseup="stopMove()" onmousedown="mokeponLeft()">Move Left</button>
-            <button class="Move_Right" onmouseup="stopMove()" onmousedown="mokeponRight()">Move Right</button>
+        <div class="map_distribution">
+            <canvas id="map"></canvas>
+            <div class="button_move">
+                <div class="button_up">
+                    <button class="Move_Up" onmouseup="stopMove()" onmousedown="mokeponUp()">↑</button>
+                </div>
+                <div class="button_linear">
+                    <button class="Move_Left" onmouseup="stopMove()" onmousedown="mokeponLeft()">↓</button>
+                    <button class="Move_Right" onmouseup="stopMove()" onmousedown="mokeponRight()">↑</button>
+                </div>
+                <div class="button_down">
+                    <button class="Move_Down" onmouseup="stopMove()" onmousedown="mokeponDown()">↓</button>
+                </div>
+            </div>
         </div>
     </section>
     <section id="select_attack">

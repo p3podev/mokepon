@@ -396,7 +396,7 @@ function drawCanvas() {
             checkCollision(Ratigueya, myMokepon)
             checkCollision(Tucapalma, myMokepon)
             checkCollision(Hipodoge, myMokepon)
-            checkCollision(Pydos, myMokepon)
+            checkCollision(Gargolin, myMokepon)
             break;
 
         default:

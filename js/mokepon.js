@@ -1,3 +1,4 @@
+const sectionShowMap = document.getElementById('show_map')
 const selectAttackSection = document.getElementById('select_attack')
 const restartSection = document.getElementById('restart')
 const buttonPet = document.getElementById('button_pet')
@@ -13,7 +14,6 @@ const enemysAttack = document.getElementById('enemys_attack')
 const spanplayerLives = document.getElementById('player_Lives')
 const spanenemyLives = document.getElementById('enemy_Lives')
 const cardsContainer = document.getElementById('cardsContainer')
-const sectionShowMap = document.getElementById('show_map')
 const map = document.getElementById('map')
 const widthMaxMap=460
 
@@ -164,6 +164,18 @@ function startGame() {
     })
     buttonPet.addEventListener('click', selectPetPlayer)
     buttonRestart.addEventListener('click', resetGame)
+    joinGame()
+}
+function joinGame(){
+    fetch("http://localhost:8080/join")
+    .then(function(res){
+        if(res.ok){
+            res.text()
+            .then(function (respuesta){
+                console.log(respuesta)
+            })
+        }
+    })
 }
 function resetGame() {
     window.location.reload()

@@ -172,7 +172,6 @@ function aleatorio(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min)
 }
 function selectPetPlayer() {
-    selectPetSection.style.display = 'none'
     if (radioHipodoge.checked) {
         spanPetPlayer.innerHTML = radioHipodoge.id
         petPlayer = radioHipodoge.id
@@ -193,7 +192,9 @@ function selectPetPlayer() {
         petPlayer = radioPydos.id
     } else {
         alert("Selecciona primero una Pet")
+        return
     }
+    selectPetSection.style.display = 'none'
     extractAttack(petPlayer)
     rivals()
     buttonPet.disabled = true

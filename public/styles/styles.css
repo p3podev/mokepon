@@ -1,0 +1,293 @@
+/*Selector de tipo ocupa el mismo nombre de la etiqueta de HTML h1 div p*/
+/*Selector de clase ocupa el atributo class de HTML y para llamarlo se pone .NombreDelClass*/
+/*Selector de ID ocupa el atributo class de HTML y para llamarlo se pone #NombreDelClass*/
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    background-color: #222831;
+    color: #DDDDDD;
+    font-family: 'Press Start 2P', cursive;
+}
+.map_distribution{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px
+}
+.Move_Up,
+.Move_Down,
+.Move_Left,
+.Move_Right {
+    width: 70px;
+    height: 70px;
+    color: #DDDDDD;
+    background-color: #F05454;
+    font-size: larger;
+    box-sizing: border-box;
+    border: 3px double #DDDDDD;
+    font-family: 'Press Start 2P', cursive;
+    border-radius: 50px;
+}
+.Move_Left,
+.Move_Right{
+    transform: rotate(90deg);
+}
+.button_linear{
+    display: flex;
+    gap:100px;
+}
+
+#button_pet{
+    width: 175px;
+    height: 50px;
+    color: #DDDDDD;
+    background-color: #F05454;
+    font-size: larger;
+    box-sizing: border-box;
+    margin-top: 30px;
+    border: 3px double #DDDDDD;
+    border-top-width: 3px;
+    font-family: 'Press Start 2P', cursive;
+    border-radius: 20px;
+}
+
+#button_pet:hover,
+.Move_Up:hover,
+.Move_Down:hover,
+.Move_Left:hover,
+.Move_Right:hover {
+    color: #30475E;
+    cursor: pointer;
+}
+
+.button_move {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 1025px;
+    height: 15px;
+    text-align: center;
+    -webkit-text-stroke: 1.2px #F05454;
+    color: transparent;
+    font-size: 2em;
+}
+
+#show_map {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#map {
+    border: 2px solid #DDDDDD;
+    border-radius: 20px;
+}
+
+#select_pet {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#pet_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 8.8px;
+    gap: 50px
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
+    gap: 10px
+}
+
+
+.mokepon_card {
+    width: 180px;
+    height: 100px;
+    background: #30475E;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px;
+    border: 1px solid #DDDDDD;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+
+}
+
+.mokepon_card:hover {
+    color: #F05454;
+    cursor: pointer;
+}
+
+#Hipodoge:checked+.mokepon_card,
+#Capipepo:checked+.mokepon_card,
+#Ratigueya:checked+.mokepon_card,
+#Gargolin:checked+.mokepon_card,
+#Tucapalma:checked+.mokepon_card,
+#Pydos:checked+.mokepon_card {
+    color: #F05454;
+}
+
+.mokepon_card img {
+    width: 90px;
+}
+
+#select_attack {
+    flex-direction: column;
+    align-items: center;
+}
+
+#button_attack {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+#button_attack button {
+    background-color: #222831;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #222831;
+    gap: 5px;
+    color: #DDDDDD;
+    font-family: 'Press Start 2P', cursive;
+    padding: 10px;
+}
+
+#button_attack button:hover {
+    color: #F05454;
+    cursor: pointer;
+    border: 1px solid #DDDDDD;
+    padding: 10px;
+}
+
+#button_attack button:disabled,
+button[disabled] {
+    color: #DDDDDD;
+    cursor: not-allowed;
+}
+
+#button_attack img {
+    height: 60px;
+}
+
+input {
+    display: none;
+
+}
+
+#restart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#messages {
+    margin-top: 10px;
+}
+
+#restart button {
+    width: 170px;
+    height: 45px;
+    color: #DDDDDD;
+    background-color: #F05454;
+    font-size: larger;
+    box-sizing: border-box;
+    border: 3px double #DDDDDD;
+    border-top-width: 3px;
+    font-family: 'Press Start 2P', cursive;
+    border-radius: 20px;
+    font-size: 1em;
+}
+
+#restart button:hover {
+    color: #30475E;
+    cursor: pointer;
+}
+
+.attacks {
+    display: grid;
+    grid-template-columns: 160px 100px 160px;
+}
+
+.attacks_player {
+    justify-self: center;
+    text-align: center;
+}
+
+.versus {
+    text-align: center;
+    color: #F05454;
+    font-size: x-large;
+    align-self: start;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.attacks_enemy {
+    justify-self: center;
+    text-align: center;
+
+}
+
+#players_attack,
+#enemys_attack,
+#resultHTML {
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+#players_attack,
+p+#enemys_attack,
+p+#resultHTML,
+p {
+    margin-bottom: 7px;
+}
+
+@media(max-width:430px) {
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        align-items: center;
+        gap: 10px
+    }
+
+    #button_attack {
+        flex-direction: column;
+        gap: 0px;
+    }
+    .map_distribution{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px
+    }
+}

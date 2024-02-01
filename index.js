@@ -1,6 +1,7 @@
 const express = require("express")
 const cors = require("cors")
 const app = express()
+app.use(express.static('public'))
 app.use(cors()) //elimina errores de cors   
 app.use(express.json()) //Permite recibir datos Json a traves de POST 
 const players = []

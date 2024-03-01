@@ -47,7 +47,7 @@ let ct = -1
 let canvas = map.getContext("2d")
 let interval
 let backgroundMap = new Image()
-backgroundMap.src = 'https://cdn.discordapp.com/attachments/1052032664024137803/1195226464736526346/mokeponMap.jpg?ex=65b33863&is=65a0c363&hm=1f8aeed65faad77f92bc6fc15d69dbdbf3f12fc2139042630dca5b2e6c099266&'
+backgroundMap.src = 'https://res.cloudinary.com/dlnwcr805/image/upload/v1709265471/Mokepon/mokeponMap_ipvlbd.jpg'
 let widthMap=window.innerWidth-20
 if(widthMap>widthMaxMap){
     widthMap=widthMaxMap-20
@@ -55,9 +55,9 @@ if(widthMap>widthMaxMap){
 let heightMap =widthMap*3/4
 map.height=heightMap
 map.width=widthMap
-let fImg = 'https://media.discordapp.net/attachments/1052032664024137803/1136862631622344765/image.png'
-let wImg = 'https://media.discordapp.net/attachments/1052032664024137803/1136862632066961488/image_3.png'
-let eImg = 'https://media.discordapp.net/attachments/1052032664024137803/1136862631844655235/image_1.png'
+let fImg = 'https://res.cloudinary.com/dlnwcr805/image/upload/v1709265471/Mokepon/fire_vtm5qo.png'
+let wImg = 'https://res.cloudinary.com/dlnwcr805/image/upload/v1709265470/Mokepon/water_o2vj3k.png'
+let eImg = 'https://res.cloudinary.com/dlnwcr805/image/upload/v1709265470/Mokepon/earth_rqf6hd.png'
 
 class Mokepon {
     constructor(name, photo, life, photoMap) {
@@ -85,12 +85,12 @@ class Mokepon {
 }
 
 //Objetos Instancia que vienen desde la clase se rellena con las propiedades definidas de la clase
-let Hipodoge = new Mokepon('Hipodoge', 'https://media.discordapp.net/attachments/1052032664024137803/1136839963376365628/5c9a0195b7e3470363aa7b45.png?width=522&height=468', 5, 'https://media.discordapp.net/attachments/1052032664024137803/1195249783493894165/Adobe_20240112_010436.png?ex=65b34e1b&is=65a0d91b&hm=c56e75774e78f9866b8884c6a44acb15766190da23d5a851db703fe06483c37e&=&format=webp&quality=lossless&width=522&height=468')
-let Capipepo = new Mokepon('Capipepo', 'https://media.discordapp.net/attachments/1052032664024137803/1136831710609281144/capipepo.png?width=421&height=468', 5, 'https://media.discordapp.net/attachments/1052032664024137803/1195249783259005000/Adobe_20240112_010305.png?ex=65b34e1a&is=65a0d91a&hm=6a92cab3de8ebb43342869a381e8df30d1ac6d4b04159f8b35c75760859795bf&=&format=webp&quality=lossless&width=421&height=468')
-let Ratigueya = new Mokepon('Ratigueya', 'https://media.discordapp.net/attachments/1052032664024137803/1136831711607521391/ratigueya.png?width=566&height=468', 5, 'https://media.discordapp.net/attachments/1052032664024137803/1195249785633001502/Adobe_20240112_011534.png?ex=65b34e1b&is=65a0d91b&hm=89dd5a2579df556c622a6ddbe63c94d4718e78b71b25f5e1033dc186818f17a7&=&format=webp&quality=lossless&width=566&height=468')
-let Gargolin = new Mokepon('Gargolin', 'https://media.discordapp.net/attachments/1052032664024137803/1136831711108415598/langostelvis.png?width=471&height=468', 5, 'https://media.discordapp.net/attachments/1052032664024137803/1195249784110469181/Adobe_20240112_010852.png?ex=65b34e1b&is=65a0d91b&hm=92be2cac5a0db7f31cb3fbb1984196ae78bb83818fe2669254ee0bee86b1ac1a&=&format=webp&quality=lossless&width=471&height=468')
-let Tucapalma = new Mokepon('Tucapalma', 'https://media.discordapp.net/attachments/1052032664024137803/1136831711842418738/tucapalma.png?width=444&height=468', 5, 'https://media.discordapp.net/attachments/1052032664024137803/1195249784357912596/Adobe_20240112_011007.png?ex=65b34e1b&is=65a0d91b&hm=68f97abafc37b0cc62e1c15ebc7555c084e8932d4f3a4729dbd0101bac33f3bc&=&format=webp&quality=lossless&width=444&height=468')
-let Pydos = new Mokepon('Pydos', 'https://media.discordapp.net/attachments/1052032664024137803/1136831711355867228/pydos.png', 5, 'https://media.discordapp.net/attachments/1052032664024137803/1195249785217753148/Adobe_20240112_011225.png?ex=65b34e1b&is=65a0d91b&hm=36ff6aa7a9ec21d90dc43118f2f0c06a6f0e8cea08e6f790e2ec3c6d659d00fd&=&format=webp&quality=lossless')
+let Hipodoge = new Mokepon('Hipodoge', 'https://res.cloudinary.com/dlnwcr805/image/upload/v1709265470/Mokepon/hipodoge_wsov3x.png', 5, 'https://res.cloudinary.com/dlnwcr805/image/upload/v1709265473/Mokepon/hipodogue_face_d03ity.png')
+let Capipepo = new Mokepon('Capipepo', 'https://res.cloudinary.com/dlnwcr805/image/upload/v1709265470/Mokepon/capipepo_m19axc.png', 5, 'https://res.cloudinary.com/dlnwcr805/image/upload/v1709265474/Mokepon/capipepo_face_jagagc.png')
+let Ratigueya = new Mokepon('Ratigueya', 'https://res.cloudinary.com/dlnwcr805/image/upload/v1709265475/Mokepon/ratigueya_txr4ys.png', 5, 'https://res.cloudinary.com/dlnwcr805/image/upload/v1709265471/Mokepon/ratigueya_face_g759gx.png')
+let Gargolin = new Mokepon('Gargolin', 'https://res.cloudinary.com/dlnwcr805/image/upload/v1709265473/Mokepon/gargolin_face_pwc8fg.png', 5, 'https://res.cloudinary.com/dlnwcr805/image/upload/v1709265473/Mokepon/gargolin_face_pwc8fg.png')
+let Tucapalma = new Mokepon('Tucapalma', 'https://res.cloudinary.com/dlnwcr805/image/upload/v1709265474/Mokepon/tucapalma_ok7b4y.png', 5, 'https://res.cloudinary.com/dlnwcr805/image/upload/v1709265472/Mokepon/tucapalma_face_gatsao.png')
+let Pydos = new Mokepon('Pydos', 'https://res.cloudinary.com/dlnwcr805/image/upload/v1709265475/Mokepon/pydos_zkay55.png', 5, 'https://res.cloudinary.com/dlnwcr805/image/upload/v1709265472/Mokepon/pydos_face_y7uqse.png')
 
 
 //Metodo Push empuja valores dentro del arreglo
